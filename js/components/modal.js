@@ -17,9 +17,10 @@ export default class Modal{
 
     onClick(callback){
         this.btnSave.onclick=()=>{
-            if(!this.title.value || this.description.value){
+            if(!this.title.value || !this.description.value){
                this.alert.show('El título y la descripción son requeridos');
             }else{
+                this.alert.hide();
                 $('#modal').modal('toggle');
                 callback(this.task.id, {
                     title: this.title.value,
